@@ -10,11 +10,11 @@ from memory_profiler import profile
 string, subString = "", ""
 
 
-def perform(method_name):
+def perform(method):
     in_time = time.time()
-    result = method_name()
+    result = method()
     res_time = time.time() - in_time
-    print("time used for {0}: {1} ".format(method_name, res_time), "\nindexes: ", result)
+    print("time used for {0}: {1} ".format(method.__name__, res_time), "\nindexes: ", result)
 
 
 def compare(i):
@@ -151,8 +151,7 @@ def main():
 
     methods = [brute_force, boyer_moore_horspool, rabin_karp, simple_hash, square_hash]
     for method in methods:
-        worker = threading.Thread(target=perform(method))
-        worker.start()
+        perform(method)
 
 
 if __name__ == "__main__":
