@@ -1,9 +1,6 @@
-import threading
 import time
 import argparse
 import math
-from collections import defaultdict
-
 from memory_profiler import profile
 
 
@@ -42,7 +39,7 @@ def boyer_moore_horspool():
     if m > n:
         return -1
 
-    skip = defaultdict(lambda: m)
+    skip = {}
     found_indexes = []
 
     for k in range(m - 1):
@@ -58,8 +55,11 @@ def boyer_moore_horspool():
             i -= 1
         if j == -1:
             found_indexes.append(i + 1)
-
-        k += skip[ord(string[k])]
+        if ord(string[k]) in skip:
+            k += skip[ord(string[k])]
+        else:
+            skip[ord(string[k])] = m
+            k += m
 
     return found_indexes
 
@@ -149,7 +149,7 @@ def main():
     string = read_file(args.main)
     subString = input("Введите подстроку: ")
 
-    methods = [brute_force, boyer_moore_horspool, rabin_karp, simple_hash, square_hash]
+    methods = [boyer_moore_horspool]
     for method in methods:
         perform(method)
 
