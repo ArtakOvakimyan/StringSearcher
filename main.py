@@ -8,7 +8,7 @@ def main():
         usage="$ python3 [Main-text file_name] {SCRIPT file_name}",
         description="""This script will provide you to compare different methods of searching a substring.
                         The result will be shown on your terminal screen.
-
+                        
                         To start to use:
                             1)Print your text or main-string in file "in.txt"
                             2)Run script by command in terminal: python3 main.py
