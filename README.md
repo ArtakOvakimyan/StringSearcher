@@ -19,3 +19,7 @@ Contributors: Ovakimyan Artak(https://github.com/ArtakOvakimyan), Nechaev Roman(
 # Использование
 чтобы узнать о том, как пользоваться скриптом, передайте в качестве аргумента -h.
 
+![image](https://user-images.githubusercontent.com/70903393/171788559-8518f167-90ee-4de0-bfe0-dccd307ffeb2.png)
+
+
+# Примеры запуска
